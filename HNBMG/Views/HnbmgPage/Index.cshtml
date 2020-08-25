@@ -1,0 +1,192 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+@using HNBMG.Models.Pages
+
+@model HNBMG.Models.Pages.HnbmgPage
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Style/New Style/Style.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div class=" container">
+        <div class=" row">
+            <div class="trending" style="margin-left:73px;margin-top:50px;">
+                <p><strong>TRENDING NOW</strong></p>
+                <div style="background-color: black;height: 1px;width:1000px"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mainbody clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5" style="margin-left:55px;margin-top:50px;">
+                    @Html.PropertyFor(m => m.MainBody)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5" style="margin-left:600px;margin-top:-200px;">
+                    @Html.PropertyFor(m => m.MainBody1)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5" style="margin-left: 55px; margin-top: -100px;">
+                    @Html.PropertyFor(m => m.MainBody2)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5" style="margin-left:600px;margin-top:-300px;">
+                    @Html.PropertyFor(m => m.MainBody3)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" container">
+        <div class=" row">
+            <div class="trending" style="margin-left:73px;">
+                <p><strong>LATEST</strong></p>
+                <div style="background-color: black;height: 1px;width:1000px"></div>
+            </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8" style="margin-top:-80px;margin-left:60px;">
+                    @*@Html.PropertyFor(m => m.MainBody4)*@
+                    @foreach (var item in ViewBag.children as IEnumerable<InfoPage>)
+                    {
+                        <div style="height: 300px; margin-top:120px;">
+                            <p><a href="@item.LinkURL"><img src="@Url.ContentUrl(item.Image)" width="374" height="300" alt="" /></a></p>
+                            <div style="margin-left: 410px; margin-top: -325px; height: 150px; width: 320px;">
+                                <div class="text2">
+                                    <p><a href="https://hnbmg.com/c/footwear" style="font-size: 10px;">FOOTWEAR</a></p>
+                                    <p><a href="@item.LinkURL" style="font-size: 20px;"><strong>@item.Name</strong></a></p>
+                                    <p><a href="https://hnbmg.com/author/baole1410" style="font-size: 10px; margin-top: 5px;">BẢO L&Ecirc; .5 NG&Agrave;Y TRƯỚC</a></p>
+                                </div>
+                                <p class="news">@item.Title</p>
+                                <div class=" sharefirst" style="margin-top: 65px;">
+                                    <p class=" shares"><strong>SHARE &rarr;</strong></p>
+                                    <div class=" iconshare" id=" one"><a href="https://www.facebook.com/hnbmg" class="fa fa-facebook"> </a> <a href="https://twitter.com/hnbmg" class="fa fa-twitter"></a> <a href="https://www.pinterest.com/hnbmgofficial/" class="fa fa-pinterest" a=""> </a></div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" container">
+        <div class=" row" style="margin-top:-410px;">
+            <div class="lineone" style=" margin-top:50px;margin-bottom:50px;margin-left:60px;"></div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8" style="margin-left:60px;height:300px;margin-top:120px;">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" container">
+        <div class=" row" style=" margin-top:-105px;">
+            <div class="lineone" style="margin-top:50px;margin-bottom:50px;margin-left:60px;"></div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8" style=" margin-left: 60px;">
+                    @Html.PropertyFor(m => m.MainBody6)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" container">
+        <div class=" row">
+            <div class="lineone" style=" margin-top:50px;margin-bottom:50px;margin-left:60px;"></div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8" style="margin-left:60px;height:300px;">
+                    @Html.PropertyFor(m => m.MainBody7)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" container">
+        <div class=" row">
+            <div class="lineone" style=" margin-top:50px;margin-bottom:50px;margin-left:60px;"></div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8" style="margin-left:60px;">
+                    @Html.PropertyFor(m => m.MainBody8)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" container">
+        <div class=" row">
+            <div class="lineone" style=" margin-top:60px;margin-bottom:50px;margin-left:60px;"></div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3" style="margin-top:-2045px;margin-left:760px;">
+                    @Html.PropertyFor(m => m.MainBody9)
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3" style="margin:20px 500px;">
+                    <div class="container">
+                        <button class="btn btn-dark">
+                            <span class="spinner-border spinner-border-sm"></span>
+                            Loading...
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
